@@ -1,4 +1,4 @@
-dir = "E:\\OneDrive\\2018-2\\AI\\project\\2018_AI_PROJECT_201411644\\dataset"
+dir = "your path"
 setwd(dir)
 
 library(caret)
@@ -74,7 +74,7 @@ adaboost_cv <- boosting.cv(G3 ~ ., data = df)
 
 1-adaboost_cv$error
 
-####cleanµÈ µ¥ÀÌÅÍ¿¡ ´ëÇØ set.seed(1234)·Î
+####cleanëœ ë°ì´í„°ì— ëŒ€í•´ set.seed(1234)ë¡œ
 #### adaboost :  47.41%
 
 
@@ -100,7 +100,7 @@ formula
 set.seed(1234)
 folds<-createFolds(df$G3, k=10)
 
-## º¯¼ö ¼±ÅÃ ÈÄ¿¡ ÇÐ½À
+## ë³€ìˆ˜ ì„ íƒ í›„ì— í•™ìŠµ
 
 cv_results <- lapply(folds, function(x){
   df_train <- df[-x,]
@@ -118,4 +118,4 @@ cv_results <- lapply(folds, function(x){
 mean(unlist(cv_results))
 
 
-### °á·Ð adaboost°¡ °¡Àå ÁÁÀº ¼º´É
+### ê²°ë¡  adaboostê°€ ê°€ìž¥ ì¢‹ì€ ì„±ëŠ¥
