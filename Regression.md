@@ -198,6 +198,10 @@ plot_sklearn(model)
 
 
 ## Ridge VS Lasso
+* Ridge : 가중치 계수를 한꺼번에 축소시킴
+* Lasso : 일부 가중치 계수가 먼저 0으로 수렴할 수 있음
+![PNG](img/ridgelasso.PNG)
+
 
 
 ```python
@@ -648,11 +652,6 @@ plt.show()
 차수는 3으로 하는 것이 효율적이겠다.
 
 
-
-## Ridge VS Lasso
-* Ridge : 가중치 계수를 한꺼번에 축소시킴
-* Lasso : 일부 가중치 계수가 먼저 0으로 수렴할 수 있음
-![PNG](img/ridgelasso.PNG)
 
 
 
