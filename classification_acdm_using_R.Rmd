@@ -1,12 +1,12 @@
 ---
 title: "acdm_classification"
 author: "JEEYOO KIM"
-date: "2018³â 12¿ù 14ÀÏ"
+date: "2018ë…„ 12ì›” 14ì¼"
 output: html_document
 ---
 # Student Academics Performance Data
 
-#### RÀÌ ¸ğµ¨ ¼º´É Çâ»ó½ÃÅ°±â¿¡ Æí¸®ÇÑ ¸î¸î ÇÔ¼öµéÀÌ ÀÖ¾î¼­ »ç¿ëÇØº¸µµ·Ï ÇÑ´Ù.
+#### Rì´ ëª¨ë¸ ì„±ëŠ¥ í–¥ìƒì‹œí‚¤ê¸°ì— í¸ë¦¬í•œ ëª‡ëª‡ í•¨ìˆ˜ë“¤ì´ ìˆì–´ì„œ ì‚¬ìš©í•´ë³´ë„ë¡ í•œë‹¤.
 
 ```{r}
 
@@ -14,7 +14,7 @@ library(caret)
 library(irr)
 library(C50)
 
-df <-read.csv("E:\\OneDrive\\2018-2\\AI\\project\\2018_AI_PROJECT_201411644\\dataset\\clean_stdt_acdm.csv")
+df <-read.csv("your path\\clean_stdt_acdm.csv")
 
 str(df)
 df$esp<-factor(df$esp)
@@ -51,7 +51,7 @@ m
 
 59%
 
-### C5.0¿¡ ´ëÇÑ tuning
+### C5.0ì— ëŒ€í•œ tuning
 ```{r}
 ctrl <- trainControl(method = "cv", number = 10,
                      selectionFunction = "oneSE")
@@ -117,7 +117,7 @@ formula = substr(f, 5, nchar(f)-4)
 ```
 
 
-####  º¯¼ö ¼±ÅÃ ÈÄ¿¡ ÇĞ½À
+####  ë³€ìˆ˜ ì„ íƒ í›„ì— í•™ìŠµ
 ```{r}
 set.seed(1234)
 folds<-createFolds(df$esp, k=10)
@@ -143,4 +143,4 @@ mean(unlist(cv_results))
 stepwise regression accuracy : 68.36%
 
 
-### ÀÌ µ¥ÀÌÅÍ´Â º¯¼ö ¼±ÅÃÇÑ µÚ È¸±ÍºĞ¼® ÇÏ´Â °ÍÀÌ °¡Àå ³ªÀº °á°ú¸¦ º¸¿´´Ù.
+### ì´ ë°ì´í„°ëŠ” ë³€ìˆ˜ ì„ íƒí•œ ë’¤ íšŒê·€ë¶„ì„ í•˜ëŠ” ê²ƒì´ ê°€ì¥ ë‚˜ì€ ê²°ê³¼ë¥¼ ë³´ì˜€ë‹¤.
