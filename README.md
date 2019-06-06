@@ -4,8 +4,12 @@ UCI Data Set 사용
 ### Student Performance
 https://archive.ics.uci.edu/ml/datasets/Student+Performance
 
+
 ### Student Academic Performance
 https://archive.ics.uci.edu/ml/datasets/Student+Academics+Performance#
+
+
+**자세한 내용은 Preprocessing을 확인**
 
 source code와 보고서를  jupyter와 r markdown으로 한번에 작성해서
 
