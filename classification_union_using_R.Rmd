@@ -1,13 +1,13 @@
 ---
 title: "union_classification"
 author: "JEEYOO KIM"
-date: "2018³â 12¿ù 14ÀÏ"
+date: "2018ë…„ 12ì›” 14ì¼"
 output: html_document
 ---
 
 # Student Performance Data
 
-#### RÀÌ ¸ğµ¨ ¼º´É Çâ»ó½ÃÅ°±â¿¡ Æí¸®ÇÑ ¸î¸î ÇÔ¼öµéÀÌ ÀÖ¾î¼­ »ç¿ëÇØº¸µµ·Ï ÇÑ´Ù.
+#### Rì´ ëª¨ë¸ ì„±ëŠ¥ í–¥ìƒì‹œí‚¤ê¸°ì— í¸ë¦¬í•œ ëª‡ëª‡ í•¨ìˆ˜ë“¤ì´ ìˆì–´ì„œ ì‚¬ìš©í•´ë³´ë„ë¡ í•œë‹¤.
 
 ```{r}
 
@@ -16,7 +16,7 @@ library(irr)
 library(C50)
 
 
-df <-read.csv("E:\\OneDrive\\2018-2\\AI\\project\\2018_AI_PROJECT_201411644\\dataset\\clean_stdt_union.csv")
+df <-read.csv("your path\\clean_stdt_union.csv")
 str(df)
 df$G3<-factor(df$G3)
 ```
@@ -88,13 +88,13 @@ adaboost_cv$confusion
 ```
 
 ### adaboost
-cleanµÈ µ¥ÀÌÅÍ¿¡ ´ëÇØ set.seed(1234)·Î 47.32%
+cleanëœ ë°ì´í„°ì— ëŒ€í•´ set.seed(1234)ë¡œ 47.32%
 
 
 
-## º¯¼ö¼±ÅÃ È¸±ÍºĞ¼®
+## ë³€ìˆ˜ì„ íƒ íšŒê·€ë¶„ì„
 
-### º¯¼ö¼±ÅÃ
+### ë³€ìˆ˜ì„ íƒ
 ```{r}
 df$G3 <- as.numeric(df$G3)
 full <- lm (G3 ~ .,data = df)
@@ -106,7 +106,7 @@ formula = substr(f, 5, nchar(f)-4)
 formula
 ```
 
-### important variableÀº formula¿¡ ÀÖÀ½
+### important variableì€ formulaì— ìˆìŒ
 
 ```{r}
 set.seed(1234)
@@ -129,7 +129,7 @@ cv_results <- lapply(folds, function(x){
 mean(unlist(cv_results))
 
 ```
-### °á·Ğ adaboost°¡ °¡Àå ÁÁÀº ¼º´É (47.31%)
+### ê²°ë¡  adaboostê°€ ê°€ì¥ ì¢‹ì€ ì„±ëŠ¥ (47.31%)
 
 ## pca data regression (stepwise)
 
@@ -171,4 +171,4 @@ adaboost_cv <- boosting.cv(G3 ~ ., data = df)
 adaboost_cv$confusion
 ```
 
-## dimensionality ÁÙÀÌ±â ÀÌÀüÀÇ µ¥ÀÌÅÍ¿¡ ´ëÇÑ adaboost°¡ °¡Àå ÁÁ´Ù
+## dimensionality ì¤„ì´ê¸° ì´ì „ì˜ ë°ì´í„°ì— ëŒ€í•œ adaboostê°€ ê°€ì¥ ì¢‹ë‹¤
