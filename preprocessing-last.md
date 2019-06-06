@@ -35,7 +35,7 @@ stdt_acdm = pd.read_csv("student_academic_performance_dataset.csv", sep="\t")
 
 https://archive.ics.uci.edu/ml/datasets/Student+Academics+Performance#
 
-![image.png](attachment:image.png)
+![png](dataset_desc_1.png)
 
 
 ### 2. Student Performance Data Set
@@ -49,7 +49,7 @@ https://archive.ics.uci.edu/ml/datasets/Student+Performance
 **G3**에 대해 분류하는 모델을 만들어야 하는데, G3의 값의 범위가 20가지이지만 이를 줄여 0~4 --> 1, 5~9 --> 2, ... 이런 식으로 새로 할 수도 있겠으나, 우선 20가지의 성적 등급에 대해 그대로 분류하는 모델을 만들었다
 
 
-![image.png](attachment:image.png)
+![png](dataset_desc_2.png)
 
 
 
@@ -1075,8 +1075,8 @@ stdt_acdm.to_csv("clean_stdt_acdm.csv", header=True, sep=",", index=False)
 
 ## 2. Student Performance Data Set
 
-### 데이터셋 설명
-![image.png](attachment:image.png)
+### 데이터셋 설명 (위에서 했었음)
+![png](dataset_desc_2.png)
 
 
 ```python
