@@ -102,7 +102,7 @@ df.plot.scatter(x = "x", y="y")
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x1daa082c630>
+    <matplotlib.axes.\_subplots.AxesSubplot at 0x1daa082c630>
 
 
 
@@ -146,7 +146,7 @@ plot_sklearn(model) # overfitting
 ![png](img/output_5_1.png)
 
 
-## Ridge Regression
+### Ridge Regression
 
 
 ```python
